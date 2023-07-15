@@ -1,0 +1,6 @@
+{
+	# If LunaLib is installed, these settings will not be used.	
+	"oxy_pc_hasValuesChanged":true,	# Are vanilla Starsector settings changed by this mod?
+	"oxy_pc_hasSkillsChanged":true, # Are vanilla Starsector skills changed by this mod?
+	"oxy_pc_hasSkillSpecial":true, # Enable the addition of the skill Special Modification?
+}
