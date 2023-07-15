@@ -1,9 +1,9 @@
 {
     "id": "oxy_pc",
     "name": "Preferable Changes",
-    "author": "Oxy",
+    "author": "Oxyliteral",
     "utility": "true",
-    "version": "1.0",
+    "version": "1.0.0",
     "description": "Edits some values to be more friendly for new players, or those that want an easier experience.",
     "gameVersion": "0.96a-RC10",
     "jars": ["jars/PreferableChanges.jar"],
