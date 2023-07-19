@@ -1,4 +1,6 @@
 Changelog:
 
+v1.0.1:
+Updated code since some settings weren't being changed.
 v1.0.0:
 Initial Release.
