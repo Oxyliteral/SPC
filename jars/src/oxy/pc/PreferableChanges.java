@@ -41,6 +41,7 @@ public class PreferableChanges extends BaseModPlugin
                 JSONObject object = Global.getSettings().loadJSON(VALUES_FILE);
                 JSONObject settings = StarfarerSettings.öÕ0000();
                 java.util.Iterator<?> keys = object.keys();
+                LOG.info(ID + ": Changing start-up settings...");
                 while(keys.hasNext()) {
                     String key = (String)keys.next();
                     settings.put(key, object.get(key));
@@ -52,6 +53,20 @@ public class PreferableChanges extends BaseModPlugin
                     }
                 }
                 StarfarerSettings.ØÔ0000();
+                object = Global.getSettings().loadJSON(VALUES_FILE);
+                settings = StarfarerSettings.öÕ0000();
+                keys = object.keys();
+                LOG.info(ID + ": Changing reflectable settings...");
+                while(keys.hasNext()) {
+                    String key = (String)keys.next();
+                    settings.put(key, object.get(key));
+                    if (object.get(key) instanceof Boolean) {
+                        Global.getSettings().getBoolean(key);
+                    }
+                    else {
+                        Global.getSettings().getFloat(key);
+                    }
+                }
             }
             if (oxy_pc_hasSkillsChanged) {
                 JSONArray file = Global.getSettings().loadCSV(SKILLS_FILE);
