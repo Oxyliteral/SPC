@@ -5,7 +5,6 @@ import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.characters.SkillSpecAPI;
 import com.fs.starfarer.launcher.ModManager;
 import com.fs.starfarer.launcher.ModManager.ModSpec;
-import com.fs.starfarer.settings.StarfarerSettings;
 import org.apache.log4j.Logger;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -39,34 +38,14 @@ public class PreferableChanges extends BaseModPlugin
             }
             if (oxy_pc_hasValuesChanged) {
                 JSONObject object = Global.getSettings().loadJSON(VALUES_FILE);
-                JSONObject settings = StarfarerSettings.öÕ0000();
+                JSONObject settings = Global.getSettings().getSettingsJSON();
                 java.util.Iterator<?> keys = object.keys();
                 LOG.info(ID + ": Changing start-up settings...");
                 while(keys.hasNext()) {
                     String key = (String)keys.next();
                     settings.put(key, object.get(key));
-                    if (object.get(key) instanceof Boolean) {
-                        Global.getSettings().getBoolean(key);
-                    }
-                    else {
-                        Global.getSettings().getFloat(key);
-                    }
                 }
-                StarfarerSettings.ØÔ0000();
-                object = Global.getSettings().loadJSON(VALUES_FILE);
-                settings = StarfarerSettings.öÕ0000();
-                keys = object.keys();
-                LOG.info(ID + ": Changing reflectable settings...");
-                while(keys.hasNext()) {
-                    String key = (String)keys.next();
-                    settings.put(key, object.get(key));
-                    if (object.get(key) instanceof Boolean) {
-                        Global.getSettings().getBoolean(key);
-                    }
-                    else {
-                        Global.getSettings().getFloat(key);
-                    }
-                }
+                Global.getSettings().resetCached();
             }
             if (oxy_pc_hasSkillsChanged) {
                 JSONArray file = Global.getSettings().loadCSV(SKILLS_FILE);
