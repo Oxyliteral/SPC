@@ -1,5 +1,8 @@
 Changelog:
-
+v1.0.3:
+Changed code so that startup settings are edited.
+v1.0.2:
+Changed code since old methods were no longer valid.
 v1.0.1:
 Updated code since some settings weren't being changed.
 v1.0.0:

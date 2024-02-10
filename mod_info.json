@@ -3,9 +3,9 @@
     "name": "Preferable Changes",
     "author": "Oxyliteral",
     "utility": "true",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "Edits some values to be more friendly for new players, or those that want an easier experience.",
-    "gameVersion": "0.97a-RC7",
+    "gameVersion": "0.97a-RC8",
     "jars": ["jars/PreferableChanges.jar"],
     "modPlugin": "oxy.pc.PreferableChanges"
 }
