@@ -8,7 +8,6 @@ public class LunaLibImplementer implements LunaSettingsListener {
 	public static final String ID = "oxy_pc";
 
     public static void init() {
-        PreferableChanges.oxy_pc_hasValuesChanged = getSetting("oxy_pc_hasValuesChanged");
         PreferableChanges.oxy_pc_hasSkillsChanged = getSetting("oxy_pc_hasSkillsChanged");
         PreferableChanges.oxy_pc_hasSkillSpecial = getSetting("oxy_pc_hasSkillSpecial");
     }

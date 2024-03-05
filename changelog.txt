@@ -1,4 +1,6 @@
 Changelog:
+v1.1.0:
+Removed settings.json.
 v1.0.3:
 Changed code so that startup settings are edited.
 v1.0.2:

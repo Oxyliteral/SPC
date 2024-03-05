@@ -1,5 +1,4 @@
 fieldID,fieldName,fieldType,defaultValue,fieldDescription,minValue,maxValue,tab
 oxy_pc_warningHeader,Warning:,Header,"Please restart the game for any changes to take effect."
-oxy_pc_hasValuesChanged,Are Settings Changed?,Boolean,true,"If enabled, then Starsector's vanilla settings are changed."
 oxy_pc_hasSkillsChanged,Are Skills Changed?,Boolean,true,"If enabled, then Starsector's vanilla skills are changed."
 oxy_pc_hasSkillSpecial,Enable the skill Special Modifications? (This will have no effect if the above is disabled),Boolean,true,"If enabled, then Special Modifications is added to the Skill Tree."

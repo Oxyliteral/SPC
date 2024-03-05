@@ -1,0 +1,8 @@
+{
+	"drop_prob_officer_alpha_core":0.1,
+	"maxCombatZoom":3.0,
+	"maxCampaignZoom":4.0,
+	"adminSalaryTier0":2500,
+	"adminSalaryTier1":5000,
+	"adminSalaryTier2":7500,
+}

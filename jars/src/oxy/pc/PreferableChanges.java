@@ -5,10 +5,11 @@ import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.characters.SkillSpecAPI;
 import com.fs.starfarer.launcher.ModManager;
 import com.fs.starfarer.launcher.ModManager.ModSpec;
-import com.fs.starfarer.settings.StarfarerSettings;
+import com.fs.starfarer.api.SettingsAPI;
 import org.apache.log4j.Logger;
 import org.json.JSONArray;
 import org.json.JSONObject;
+
 
 public class PreferableChanges extends BaseModPlugin
 {
@@ -16,57 +17,26 @@ public class PreferableChanges extends BaseModPlugin
     public static final Logger LOG = Global.getLogger(PreferableChanges.class);
     public static final String CONFIG_FILE = "Config.json";
 
-    public static final String VALUES_FILE = "data/settings.json";
+    public static final String VALUES_FILE = "data/config/settings.json";
     public static final String SKILLS_FILE = "data/skill_data.csv";
 
     public static final String[] LIST_SKILLS_FILE = new String[] {"data/characters/skills/special_modifications.skill"};
 
     
-    public static boolean oxy_pc_hasValuesChanged;
     public static boolean oxy_pc_hasSkillsChanged;
     public static boolean oxy_pc_hasSkillSpecial;
 
 	@Override
 	public void onApplicationLoad() {
         try {
-            if (Global.getSettings().getModManager().isModEnabled("lunalib")) {
+            SettingsAPI settings = Global.getSettings();
+            if (settings.getModManager().isModEnabled("lunalib")) {
                 LunaLibImplementer.init();
             }
             else {
-                oxy_pc_hasValuesChanged = Global.getSettings().loadJSON(CONFIG_FILE).optBoolean("oxy_pc_hasValuesChanged");
-                oxy_pc_hasSkillsChanged = Global.getSettings().loadJSON(CONFIG_FILE).optBoolean("oxy_pc_hasSkillsChanged");
-                oxy_pc_hasSkillSpecial = Global.getSettings().loadJSON(CONFIG_FILE).optBoolean("oxy_pc_hasSkillSpecial");
-            }
-            if (oxy_pc_hasValuesChanged) {
-                JSONObject object = Global.getSettings().loadJSON(VALUES_FILE);
-                JSONObject settings = StarfarerSettings.øÕ0000();
-                java.util.Iterator<?> keys = object.keys();
-                LOG.info(ID + ": Changing start-up settings...");
-                while(keys.hasNext()) {
-                    String key = (String)keys.next();
-                    settings.put(key, object.get(key));
-                    if (object.get(key) instanceof Boolean) {
-                        Global.getSettings().getBoolean(key);
-                    }
-                    else {
-                        Global.getSettings().getFloat(key);
-                    }
-                }
-                StarfarerSettings.ôÔ0000();
-                object = Global.getSettings().loadJSON(VALUES_FILE);
-                settings = StarfarerSettings.øÕ0000();
-                keys = object.keys();
-                LOG.info(ID + ": Changing reflectable settings...");
-                while(keys.hasNext()) {
-                    String key = (String)keys.next();
-                    settings.put(key, object.get(key));
-                    if (object.get(key) instanceof Boolean) {
-                        Global.getSettings().getBoolean(key);
-                    }
-                    else {
-                        Global.getSettings().getFloat(key);
-                    }
-                }
+                JSONObject configSettings = Global.getSettings().loadJSON(CONFIG_FILE);
+                oxy_pc_hasSkillsChanged = configSettings.optBoolean("oxy_pc_hasSkillsChanged");
+                oxy_pc_hasSkillSpecial = configSettings.optBoolean("oxy_pc_hasSkillSpecial");
             }
             if (oxy_pc_hasSkillsChanged) {
                 JSONArray file = Global.getSettings().loadCSV(SKILLS_FILE);

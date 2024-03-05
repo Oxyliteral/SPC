@@ -2,13 +2,13 @@
 	"masterVersionFile":"https://raw.githubusercontent.com/Oxyliteral/SPC/master/PreferableChanges.version",
 	"modName":"Preferable Changes",
    	"modThreadId":-1,
- 	"directDownloadURL":"https://github.com/Oxyliteral/SPC/releases/download/v1.0.3/PreferableChanges.zip",
+ 	"directDownloadURL":"https://github.com/Oxyliteral/SPC/releases/download/v1.1.0/PreferableChanges.zip",
  	"changelogURL":"https://raw.githubusercontent.com/Oxyliteral/SPC/master/changelog.txt",
 	"modVersion":
 	{
 		"major":1,
-		"minor":0,
-		"patch":3
+		"minor":1,
+		"patch":0
 	},
-	"starsectorVersion":".97a-RC8"
+	"starsectorVersion":".97a-RC11"
 }
